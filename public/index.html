@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="mn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitWeeb Club | Гишүүн бүртгэл</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav>
+        <h1>FitWeeb Club</h1>
+        <a href="#register" class="btn ghost">Эхлэх</a>
+      </nav>
+      <div class="hero-content">
+        <p class="badge">EVERFIT загварын мэдрэмжтэй</p>
+        <h2>Фитнесс клубийн гишүүнчлэлийг онлайнаар бүртгээрэй</h2>
+        <p>
+          Дасгалын зорилго, багш, төлөвлөгөөгөө сонгоод 1 минутын дотор бүртгүүл.
+        </p>
+        <a href="#register" class="btn">Гишүүн болох</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="register" class="card">
+        <h3>Гишүүн бүртгэлийн маягт</h3>
+        <form id="memberForm">
+          <label>
+            Овог нэр
+            <input type="text" name="name" required placeholder="Ж: Бат-Эрдэнэ" />
+          </label>
+          <label>
+            Утас
+            <input type="tel" name="phone" required placeholder="Ж: 99112233" pattern="[0-9]{8}" />
+          </label>
+          <label>
+            И-мэйл
+            <input type="email" name="email" required placeholder="name@email.com" />
+          </label>
+          <label>
+            Зорилго
+            <select name="goal" required>
+              <option value="">Сонгох...</option>
+              <option>Жин хасах</option>
+              <option>Булчин нэмэх</option>
+              <option>Ерөнхий биеийн галбир</option>
+            </select>
+          </label>
+          <label>
+            Пакет
+            <select name="plan" required>
+              <option value="">Сонгох...</option>
+              <option>1 сар - Basic</option>
+              <option>3 сар - Pro</option>
+              <option>6 сар - Elite</option>
+            </select>
+          </label>
+          <button class="btn" type="submit">Бүртгүүлэх</button>
+        </form>
+        <p id="status" aria-live="polite"></p>
+      </section>
+
+      <section class="card">
+        <h3>Сүүлийн бүртгүүлсэн гишүүд</h3>
+        <ul id="members"></ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
