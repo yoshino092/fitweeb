@@ -1,0 +1,15 @@
+{
+  "name": "fitweeb",
+  "version": "1.0.0",
+  "description": "FitWeeb fitness club membership web with frontend, backend, and SQLite DB",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "check": "node --check server.js && node --check db.js && node --check public/script.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "express": "^4.21.2"
+  }
+}

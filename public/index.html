@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="mn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitWeeb | Role Based Fitness System</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>FitWeeb Club Management</h1>
+      <p>User / Admin / Trainer / Member эрхтэй систем</p>
+      <p class="badge">Demo нэвтрэх: admin@fitweeb.mn/admin123, trainer@fitweeb.mn/trainer123, member@fitweeb.mn/member123</p>
+    </header>
+
+    <main>
+      <section class="card" id="authCard">
+        <h2>Нэвтрэх</h2>
+        <form id="loginForm">
+          <input type="email" name="email" placeholder="email" required />
+          <input type="password" name="password" placeholder="password" required />
+          <button class="btn" type="submit">Нэвтрэх</button>
+        </form>
+        <button id="logoutBtn" class="btn ghost hidden">Гарах</button>
+        <p id="authStatus"></p>
+      </section>
+
+      <section class="card hidden" id="memberPanel">
+        <h3>Member Panel</h3>
+        <div class="actions">
+          <button class="btn" data-api="/api/member/profile">Профайл</button>
+          <button class="btn" data-api="/api/member/membership">Гишүүнчлэл</button>
+          <button class="btn" data-api="/api/member/trainers">Дасгалжуулагч</button>
+          <button class="btn" data-api="/api/member/trainer-slots">Slot-ууд</button>
+          <button class="btn" data-api="/api/member/attendance">Ирц</button>
+          <button class="btn" data-api="/api/member/payments">Төлбөр</button>
+          <button class="btn" data-api="/api/member/progress">Ахиц</button>
+          <button class="btn" id="shareProgressBtn">Ахиц хуваалцах</button>
+        </div>
+      </section>
+
+      <section class="card hidden" id="trainerPanel">
+        <h3>Trainer Panel</h3>
+        <div class="actions">
+          <button class="btn" data-api="/api/trainer/members">Гишүүд</button>
+          <button class="btn" data-api="/api/trainer/slots">Миний slot</button>
+          <button class="btn" id="createSlotBtn">Slot үүсгэх</button>
+          <button class="btn" id="createGoalBtn">Goal үүсгэх</button>
+        </div>
+      </section>
+
+      <section class="card hidden" id="adminPanel">
+        <h3>Admin Panel</h3>
+        <div class="actions">
+          <button class="btn" data-api="/api/admin/members">Гишүүн хайх</button>
+          <button class="btn" id="createMemberBtn">Гишүүн нэмэх</button>
+          <button class="btn" data-api="/api/admin/plans">Планууд</button>
+          <button class="btn" id="createPlanBtn">План нэмэх</button>
+          <button class="btn" data-api="/api/admin/revenue">Орлого</button>
+          <button class="btn" data-api="/api/admin/slots">Slot тайлан</button>
+          <button class="btn" data-api="/api/admin/attendance">Ирц тайлан</button>
+          <button class="btn" data-api="/api/admin/progress">Ахиц тайлан</button>
+          <button class="btn" data-api="/api/admin/export">Export</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>API Output</h3>
+        <pre id="output">Нэвтрээд функц сонгоно уу.</pre>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
